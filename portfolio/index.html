@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfolio - Tema Escuro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-trail"></div>
+    
+    <!-- Partículas de fundo -->
+    <div class="particles"></div>
+    
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-code"></i>
+                Portfolio
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#about" class="nav-link">Sobre</a></li>
+                <li><a href="#projects" class="nav-link">Projetos</a></li>
+                <li><a href="#social" class="nav-link">Redes Sociais</a></li>
+                <li><a href="#contact" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="images/1733756002596.jpg" alt="Matheus Alende">
+                </div>
+                <h1>Olá, eu sou <span class="highlight">Matheus Alende</span></h1>
+                <p class="typing-text">Desenvolvedor Web Full Stack</p>
+                <div class="hero-buttons">
+                    <button class="cta-button primary">Ver Projetos</button>
+                    <button class="cta-button secondary">Baixar CV</button>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2><i class="fas fa-user-circle"></i> Sobre Mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Sou um estudante de Engenharia de Software apaixonado por programação e desenvolvimento de soluções. Atualmente focado em aprender C, HTML, CSS e JavaScript, com experiência em desenvolvimento de sistemas e estruturas de dados.</p>
+                    <div class="skills">
+                        <h3>Minhas Habilidades</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Estrutura de Dados</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h2><i class="fas fa-project-diagram"></i> Meus Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Controle Bancário</h3>
+                        <p>Sistema de gerenciamento de transações bancárias desenvolvido como trabalho final da disciplina de Estrutura de Dados. Permite controle completo de contas, movimentações e operações bancárias.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">C</span>
+                            <span class="project-tag">Estrutura de Dados</span>
+                            <span class="project-tag">Sistema Bancário</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Mathyess/ControleBancario" class="project-link" target="_blank"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Sistema de Materiais de Construção</h3>
+                        <p>Banco de dados MySQL para uma empresa fictícia de materiais de construção. Desenvolvido como trabalho da disciplina de Banco de Dados Relacional, com modelagem completa e consultas SQL.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">Banco de Dados</span>
+                            <span class="project-tag">SQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Moosy-Joao/Trabalho_BDR" class="project-link" target="_blank"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Licinha Crochê</h3>
+                        <p>Site institucional desenvolvido para uma microempreendedora do ramo de artesanato. Apresenta galeria de peças artesanais, catálogo online e contato direto via WhatsApp.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://licinha-croche.vercel.app" class="project-link" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="https://github.com/Moosy-Joao/Licinha-Croche" class="project-link" target="_blank"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>API Controle de Estoque</h3>
+                        <p>API RESTful desenvolvida em Java com Spring Boot para controle de estoque. Implementa camadas de entidades, serviços, repositórios e controllers seguindo boas práticas de desenvolvimento.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">API REST</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Moosy-Joao/API-Controle-de-Estoque" class="project-link" target="_blank"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Portfolio Pessoal</h3>
+                        <p>Portfolio profissional desenvolvido com design moderno e responsivo, incluindo seções para projetos, habilidades e contato direto via WhatsApp.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Código</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social" class="social">
+            <h2><i class="fas fa-share-alt"></i> Redes Sociais</h2>
+            <div class="social-grid">
+                <a href="https://github.com/Mathyess" target="_blank" class="social-card github">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>@Mathyess</p>
+                </a>
+                <a href="https://www.linkedin.com/in/matheus-alende-26384a278/" target="_blank" class="social-card linkedin">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Matheus Alende</p>
+                </a>
+                <a href="https://x.com/MathyesSs2" target="_blank" class="social-card twitter">
+                    <i class="fab fa-twitter"></i>
+                    <h3>Twitter/X</h3>
+                    <p>@MathyesSs2</p>
+                </a>
+                <a href="https://www.instagram.com/mathyyess/" target="_blank" class="social-card instagram">
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram</h3>
+                    <p>@mathyyess</p>
+                </a>
+                <a href="https://www.youtube.com/@mathyyess" target="_blank" class="social-card youtube">
+                    <i class="fab fa-youtube"></i>
+                    <h3>YouTube</h3>
+                    <p>@mathyyess</p>
+                </a>
+                <a href="https://discord.gg/6jzScPsb" target="_blank" class="social-card discord">
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord</h3>
+                    <p>Comunidade</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2><i class="fas fa-envelope"></i> Contato</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>Matheuzoapires@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefone</h3>
+                            <p>+55 (67) 99924-8110</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Localização</h3>
+                            <p>Paraná, Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="contact-name" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="contact-email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contact-message" placeholder="Sua mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Matheus Alende. Todos os direitos reservados.</p>
+            <div class="footer-links">
+                <a href="#home">Início</a>
+                <a href="#about">Sobre</a>
+                <a href="#projects">Projetos</a>
+                <a href="#contact">Contato</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
