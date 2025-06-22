@@ -3,7 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfolio - Tema Escuro</title>
+    <title>Matheus Alende - Desenvolvedor Full Stack</title>
+    <meta name="description" content="Portfolio de Matheus Alende - Desenvolvedor Full Stack especializado em HTML, CSS, JavaScript, Java, MySQL e C. Confira meus projetos e entre em contato!">
+    <meta name="keywords" content="Matheus Alende, desenvolvedor, full stack, HTML, CSS, JavaScript, Java, MySQL, portfolio, programador">
+    <meta name="author" content="Matheus Alende">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mathyess.github.io/portfolio/">
+    <meta property="og:title" content="Matheus Alende - Desenvolvedor Full Stack">
+    <meta property="og:description" content="Portfolio profissional de Matheus Alende, desenvolvedor Full Stack apaixonado por criar soluções web inovadoras.">
+    <meta property="og:image" content="https://mathyess.github.io/portfolio/images/1733756002596.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mathyess.github.io/portfolio/">
+    <meta property="twitter:title" content="Matheus Alende - Desenvolvedor Full Stack">
+    <meta property="twitter:description" content="Portfolio profissional de Matheus Alende, desenvolvedor Full Stack apaixonado por criar soluções web inovadoras.">
+    <meta property="twitter:image" content="https://mathyess.github.io/portfolio/images/1733756002596.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="logo.svg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,26 +40,26 @@
 </head>
 <body>
     <!-- Cursor personalizado -->
-    <div class="custom-cursor"></div>
-    <div class="cursor-trail"></div>
+    <div class="custom-cursor" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
     
     <!-- Partículas de fundo -->
-    <div class="particles"></div>
+    <div class="particles" aria-hidden="true"></div>
     
-    <header class="header">
-        <nav class="nav">
+    <header class="header" role="banner">
+        <nav class="nav" role="navigation" aria-label="Navegação principal">
             <div class="nav-brand">
-                <i class="fas fa-code"></i>
-                Portfolio
+                <img src="logo.svg" alt="Logo Matheus Alende" class="nav-logo">
+                <span>Matheus Alende</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#home" class="nav-link" aria-current="page">Início</a></li>
                 <li><a href="#about" class="nav-link">Sobre</a></li>
                 <li><a href="#projects" class="nav-link">Projetos</a></li>
                 <li><a href="#social" class="nav-link">Redes Sociais</a></li>
                 <li><a href="#contact" class="nav-link">Contato</a></li>
             </ul>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,20 +67,20 @@
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="hero">
+    <main role="main">
+        <section id="home" class="hero" aria-label="Seção principal">
             <div class="hero-content">
                 <div class="profile-image">
-                    <img src="images/1733756002596.jpg" alt="Matheus Alende">
+                    <img src="images/1733756002596.jpg" alt="Matheus Alende - Desenvolvedor Full Stack">
                 </div>
                 <h1>Olá, eu sou <span class="highlight">Matheus Alende</span></h1>
-                <p class="typing-text">Desenvolvedor Web Full Stack</p>
+                <p class="typing-text" aria-label="Desenvolvedor Web Full Stack">Desenvolvedor Web Full Stack</p>
                 <div class="hero-buttons">
-                    <button class="cta-button primary">Ver Projetos</button>
-                    <button class="cta-button secondary">Baixar CV</button>
+                    <button class="cta-button primary" onclick="scrollToSection('projects')" aria-label="Ver projetos">Ver Projetos</button>
+                    <button class="cta-button secondary" onclick="downloadCV()" aria-label="Baixar currículo">Baixar CV</button>
                 </div>
             </div>
-            <div class="scroll-indicator">
+            <div class="scroll-indicator" role="button" tabindex="0" aria-label="Rolar para baixo" onclick="scrollToSection('about')">
                 <div class="scroll-arrow"></div>
             </div>
         </section>
@@ -66,14 +94,13 @@
                         <h3>Minhas Habilidades</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">C</span>
-                            <span class="skill-tag">Java</span>
-                            <span class="skill-tag">HTML5</span>
-                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Spring Boot</span>
-                            <span class="skill-tag">Estrutura de Dados</span>
+                            <span class="skill-tag">Java</span>
                             <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Estrutura de Dados</span>
                         </div>
                     </div>
                 </div>
@@ -100,6 +127,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-database"></i>
@@ -117,6 +145,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-shopping-bag"></i>
@@ -135,6 +164,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fab fa-java"></i>
@@ -152,6 +182,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
                     <div class="project-image">
                         <i class="fas fa-code"></i>
@@ -257,13 +288,20 @@
         <div class="footer-content">
             <p>&copy; 2025 Matheus Alende. Todos os direitos reservados.</p>
             <div class="footer-links">
-                <a href="#home">Início</a>
-                <a href="#about">Sobre</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
+                <a href="https://github.com/Mathyess/portfolio" target="_blank" aria-label="GitHub do Portfolio">
+                    <i class="fab fa-github"></i> Portfolio
+                </a>
+                <a href="https://github.com/Mathyess" target="_blank" aria-label="GitHub Pessoal">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
             </div>
         </div>
     </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo da página">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

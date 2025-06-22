@@ -1,3 +1,24 @@
+// Função para download do CV
+function downloadCV() {
+    const link = document.createElement('a');
+    link.href = 'Curriculum Matheus (3).pdf';
+    link.download = 'Curriculum Matheus Alende.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Função para rolar suavemente para seções
+function scrollToSection(sectionId) {
+    const section = document.querySelector(`#${sectionId}`);
+    if (section) {
+        section.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+}
+
 // Cursor personalizado
 const cursor = document.querySelector('.custom-cursor');
 const cursorTrail = document.querySelector('.cursor-trail');
@@ -54,19 +75,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Botões CTA
 document.querySelector('.cta-button.primary').addEventListener('click', function() {
-    const projectsSection = document.querySelector('#projects');
-    projectsSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+    scrollToSection('projects');
 });
 
 document.querySelector('.cta-button.secondary').addEventListener('click', function() {
-    // Download do CV real
-    const link = document.createElement('a');
-    link.href = 'Curriculum Matheus (3).pdf';
-    link.download = 'CV_Matheus_Alende.pdf';
-    link.click();
+    downloadCV();
 });
 
 // Animação de scroll para elementos
@@ -120,20 +133,22 @@ window.addEventListener('scroll', function() {
     
     navLinks.forEach(link => {
         link.classList.remove('active');
+        link.removeAttribute('aria-current');
         if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
         }
     });
 });
 
 // Efeito de digitação
-function typeWriter(element, text, speed = 100) {
+function typeWriter(element, text, speed) {
     let i = 0;
-    element.innerHTML = '';
+    element.textContent = '';
     
     function type() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            element.textContent += text.charAt(i);
             i++;
             setTimeout(type, speed);
         }
@@ -149,32 +164,33 @@ window.addEventListener('load', () => {
     typeWriter(typingElement, originalText, 80);
 });
 
-// Formulário de contato - Redirecionamento para WhatsApp
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function(e) {
+// Formulário de contato
+document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
     
     const name = document.getElementById('contact-name').value;
     const email = document.getElementById('contact-email').value;
     const message = document.getElementById('contact-message').value;
     
-    // Criar mensagem formatada para WhatsApp
-    const whatsappMessage = `Olá! Sou ${name} e gostaria de entrar em contato com você.
+    // Criar mensagem profissional para WhatsApp
+    const whatsappMessage = `🚀 *Nova Mensagem do Portfolio*
 
-📧 Email: ${email}
-💬 Mensagem: ${message}
+👤 *Nome:* ${name}
+📧 *Email:* ${email}
 
-Encontrei seu portfolio e fiquei interessado em conversar!`;
+💬 *Mensagem:*
+${message}
+
+---
+*Enviado através do portfolio de Matheus Alende*
+*Desenvolvedor Web & Engenheiro de Software*`;
     
-    // Codificar a mensagem para URL
-    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/5567999248110?text=${encodeURIComponent(whatsappMessage)}`;
     
-    // Redirecionar para WhatsApp
-    const whatsappURL = `https://wa.me/5567999248110?text=${encodedMessage}`;
-    window.open(whatsappURL, '_blank');
+    window.open(whatsappUrl, '_blank');
     
     // Limpar formulário
-    contactForm.reset();
+    this.reset();
 });
 
 // Efeitos de hover nos cards de redes sociais
@@ -190,25 +206,8 @@ document.querySelectorAll('.social-card').forEach(card => {
 
 // Animação de scroll suave para o indicador de scroll
 document.querySelector('.scroll-indicator').addEventListener('click', () => {
-    const aboutSection = document.querySelector('#about');
-    aboutSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-    });
+    scrollToSection('about');
 });
-
-// Efeito de parallax sutil
-/* Efeito removido para corrigir problemas de layout
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero, .about, .projects, .social');
-    
-    parallaxElements.forEach((element, index) => {
-        const speed = 0.5 + (index * 0.1);
-        element.style.transform = `translateY(${scrolled * speed * 0.1}px)`;
-    });
-});
-*/
 
 // Efeito de brilho nos botões
 document.querySelectorAll('.cta-button, .submit-btn').forEach(button => {
@@ -221,9 +220,6 @@ document.querySelectorAll('.cta-button, .submit-btn').forEach(button => {
     });
 });
 
-// Inicializar partículas
-createParticles();
-
 // Efeito de loading da página
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
@@ -234,26 +230,48 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Efeito de vibração nos cards de projeto
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.animation = 'shake 0.5s ease-in-out';
-    });
-    
-    card.addEventListener('animationend', function() {
-        this.style.animation = '';
-    });
+// Criar partículas quando a página carregar
+window.addEventListener('load', createParticles);
+
+// Suporte a teclado para acessibilidade
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        // Fechar qualquer modal ou menu aberto
+        const mobileMenu = document.querySelector('.mobile-menu-btn');
+        if (mobileMenu.getAttribute('aria-expanded') === 'true') {
+            mobileMenu.setAttribute('aria-expanded', 'false');
+        }
+    }
 });
 
-// Adicionar keyframe para shake
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes shake {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-5px); }
-        75% { transform: translateX(5px); }
+// Menu mobile funcionalidade
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenuBtn.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('active');
+});
+
+// Botão Voltar ao Topo
+const backToTopBtn = document.getElementById('back-to-top');
+
+// Mostrar/ocultar botão baseado no scroll
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.add('visible');
+    } else {
+        backToTopBtn.classList.remove('visible');
     }
-`;
-document.head.appendChild(style);
+});
+
+// Funcionalidade do botão voltar ao topo
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
 
 console.log('Portfolio carregado com sucesso! 🚀');
